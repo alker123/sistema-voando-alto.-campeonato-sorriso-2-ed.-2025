@@ -1,0 +1,318 @@
+/* ========================================================= */
+/* 🥇 SEÇÃO 1: RESET, BASE E FUNDO (MANTIDO)                  */
+/* ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* O contêiner principal agora usa 100% da viewport para a responsividade */
+.container-tela {
+    border: 0.052vw solid #555;
+    background-image: url('imagem.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* Mantido: Garantir que a tela preencha a Viewport */
+    height: 100vh;
+    width: 100vw;
+    padding: 1.04vw; 
+    border-radius: 0.52vw;
+    box-shadow: 0 0.41vw 1.3vw rgba(0, 0, 0, 0.3);
+    position: relative;
+    top: 0vw !important;
+    left: 0vw !important;
+    z-index: 1;
+    overflow: hidden; /* Importante para garantir que não haja barras de rolagem */
+}
+
+/* Fundo do vídeo mantido OK */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#tela1 {
+    margin-top: 1.04vw; 
+}
+
+/* ========================================================= */
+/* 🥈 SEÇÃO 2: TÍTULO DA CATEGORIA E BOTÕES                   */
+/* ========================================================= */
+
+/* Estilo dos botões */
+.btn1 {
+    background: linear-gradient(135deg, #2e3338 0%, #3f4347 50%, #6b7075 100%);
+    color: rgb(242, 234, 10);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.btn1:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 50%, #002752 100%);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-large2 {
+    width: 90px;
+    text-align: center;
+    font-size: 11px;
+}
+
+
+/* Seletor (Dropdown) - Posicionado no canto superior direito */
+#seletor-categoria5 {
+    position: absolute; /* Mudado para absolute para fixar no canto */
+    top: 1vw !important; /* Ajuste para o canto superior */
+    right: 1vw !important; /* Ajuste para o canto direito */
+    left: auto !important; /* Remove o left fixo original */
+    cursor: pointer;
+    font-size: 1vw;
+    z-index: 10;
+}
+
+/* Container do Título - Centralizado no topo */
+#input-categoria14 {
+    /* Força a centralização horizontal */
+    display: block; 
+    width: 35vw; /* Largura ajustada */
+    height: 2.6vw; 
+    position: absolute; /* Mudado para absolute para ignorar o fluxo */
+    left: 50% !important; /* Centraliza no meio */
+    transform: translateX(-50%); /* Ajuste de 50% para centralizar */
+    top: 1vw !important; /* Posição no topo (ajuste se necessário) */
+    background: transparent;
+    border: none !important; /* Remove a borda */
+    outline: none !important; /* Remove o contorno */
+}
+
+
+/* Título (infantil 2 feminino) */
+#categoria14 {
+    height: auto;
+    width: 100%; /* Ocupa a largura do seu container */
+    left: 0% !important;
+    color: #FFF;
+    font-size: 3.125vw; 
+    text-align: center;
+    line-height: 1.2;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    /* Efeito de fundo no texto mantido */
+    background: linear-gradient(90deg, #2dccf0, #3a6ff5);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0.1vw -0.1vw 0vw rgb(248, 249, 249); 
+    border: none !important; /* Remove a borda */
+    outline: none !important; /* Remove o contorno */
+}
+
+
+/* ========================================================= */
+/* 🥉 SEÇÃO 3: LAYOUT DOS ATLETAS (AJUSTE POR COORDENADAS VW) */
+/* ========================================================= */
+
+/* Contêiner Geral do Atleta (Primeiro, Segundo, Terceiro) */
+#primeiro, #segundo, #terceiro {
+    position: absolute; /* Usamos absolute para forçar a posição */
+    width: 90vw; /* Larga quase total */
+    height: 10vw; /* Altura de cada faixa */
+    left: 50% !important;
+    transform: translateX(-50%);
+    border-radius: 0.52vw;
+    color: inherit;
+    /* Ajuste de Posição Vertical (top) */
+    top: 10vw; 
+    /* O CSS original tinha top: -60px (ou -3.125vw), ignoramos e definimos as faixas */
+}
+#primeiro { top: 15vw !important; color: #FFCC00; } /* Primeira faixa */
+#segundo { top: 27vw !important; color: #afafac; }  /* Segunda faixa */
+#terceiro { top: 39vw !important; color: #ed6111; } /* Terceira faixa */
+
+/* FOTOS (Alinhadas à esquerda) */
+#foto-atleta-container1, #foto-atleta-container2, #foto-atleta-container3 {
+    position: absolute;
+    top: -4vw !important; /* Posição vertical dentro da faixa */
+    left: 2vw !important; /* Posição horizontal dentro da faixa */
+    margin-top: 0;
+}
+
+#foto-atleta1, #foto-atleta2, #foto-atleta3 {
+    width: 10vw; 
+    height: 10vw; 
+    object-fit: cover;
+    border-radius: 50%;
+    border-width: 0.26vw; 
+    border-style: solid; 
+}
+#foto-atleta1 { border-color: #FFCC00; }
+#foto-atleta2 { border-color: #afafac; }
+#foto-atleta3 { border-color: #ed6111; }
+
+/* POSIÇÃO (PRIMEIRO, SEGUNDO, TERCEIRO) - Coluna 1 do texto */
+#pocicao1, #pocicao12, #pocicao13 {
+    position: absolute !important; /* Força absolute */
+    top: -1.9vw !important; /* Posição vertical dentro da faixa */
+    left: 18vw !important; /* Posição horizontal (ao lado da foto) */
+    transform: none !important; /* Remove o transform para centralizar */
+    width: 8vw; /* Largura para o texto */
+    font-size: 1.56vw;
+    font-weight: bold;
+    text-align: left;
+    height: auto;
+    background: transparent;
+    border: none !important; /* Remove a borda */
+    outline: none !important; /* Remove o contorno */
+}
+#pocicao1 { 
+    background: linear-gradient(90deg, #FFD700, #FFCC00);
+    background-clip: text; color: transparent; 
+}
+/* ... Repita os estilos para pocicao12 e pocicao13 ... */
+
+
+/* NOME DO ATLETA - Coluna 1 do texto (abaixo da posição) */
+#nome, #nome2, #nome3 {
+    position: absolute !important;
+    top: 1.0vw !important; /* Posição vertical abaixo da posição */
+    left: 14vw !important; /* Alinhado com a posição */
+    transform: none !important;
+    width: 43vw; /* Largura para o nome */
+    height: 6vw;
+    font-size: 4.5vw;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.1;
+    font-family: 'Oswald', sans-serif;
+    background: transparent;
+    border: none !important; /* Remove a borda */
+    outline: none !important; /* Remove o contorno */
+
+}
+/* ... Aplique gradientes e sombras para nome, nome2 e nome3 ... */
+
+
+/* FASE (SEMIFINAL) - Coluna 2 do texto */
+#fase1, #fase12, #fase13 {
+    position: absolute !important;
+    top: -1.5vw !important; /* Posição vertical no topo da faixa */
+    left: 45vw !important; /* Posição horizontal (Col 2) */
+    transform: none !important;
+    width: 15vw; 
+    font-size: 1.25vw;
+    color: #FFF;
+    text-align: left;
+    height: auto;
+    background: transparent;
+    text-align: center;
+    border: none !important; /* Remove a borda */
+    outline: none !important; /* Remove o contorno */
+}
+
+/* NOTAS (Alinhadas à direita da faixa) - Coluna 3 */
+#nota12, #nota122, #nota123 {
+    position: absolute !important;
+    top: -3vw !important; /* Posição vertical no topo da faixa */
+    right: 3vw !important; /* Alinha à direita (ajuste a distância da borda) */
+    left: auto !important; /* Remove o left fixo */
+    transform: none !important;
+    width: 25vw; /* Largura para o número da nota */
+    height: 100%;
+    font-size: 10vw; /* Nota bem grande */
+    text-align: right;
+    line-height: 10vw; /* Alinhamento vertical do texto dentro da caixa de 10vw de altura */
+    background-clip: text;
+    color: transparent;
+    font-family: 'Oswald', sans-serif;
+    border: none !important; /* Remove a borda */
+    outline: none !important; /* Remove o contorno */ 
+}
+/* ... Aplique gradientes e sombras para nota12, nota122 e nota123 ... */
+
+#nota12, #nome, #pocicao1 {
+    /*color: #FFCC00;*/
+    background: linear-gradient(90deg, #FFD700, #FFCC00);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 0px 16px rgba(255, 215, 0, 0.8);
+}
+#nota122, #nome2, #pocicao12 {
+    /*color: #afafac;*/
+    background: linear-gradient(90deg, #FFFFFF, #D3D3D3);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 0px 16px rgba(203, 203, 203, 0.8);
+}
+#nota123, #nome3, #pocicao13 {
+    /*color: #ed6111;*/
+    background: linear-gradient(90deg, #f3902e, #f37f12);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 0px 16px rgba(246, 128, 10, 0.995);
+}
+
+/* Linhas Divisoras */
+hr#linha1, hr#linha2 {
+    position: absolute;
+    width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0.052vw solid #ccc;
+    /* Ajuste de Posição Vertical (top) */
+    top: 22vw !important; 
+}
+hr#linha2 { 
+    top: 34vw !important; 
+}
+
+/* 🛑 NOVO BLOCO: REMOVE AS BORDAS DE FOCO INDESEJADAS (OUTLINE) 🛑 */
+/* Aplica-se aos nomes dos atletas, às fases e, para ser seguro, às posições */
+
+#nome:focus, 
+#nome2:focus, 
+#nome3:focus, 
+#fase1:focus, 
+#fase12:focus, 
+#fase13:focus, 
+#pocicao1:focus, 
+#pocicao12:focus, 
+#pocicao13:focus,
+input:focus,
+textarea:focus {
+    /* Remove o contorno de foco padrão do navegador (a linha cinza/azul) */
+    outline: none !important;
+    
+    /* Remove a sombra que alguns navegadores usam como borda de foco */
+    box-shadow: none !important;
+    
+    /* Garante que a borda normal também seja zero no foco */
+    border: none !important; 
+}
+
+/* Para navegadores que usam :focus-visible (acessibilidade) */
+#nome:focus-visible, 
+#nome2:focus-visible, 
+#nome3:focus-visible, 
+#fase1:focus-visible, 
+#fase12:focus-visible, 
+#fase13:focus-visible, 
+#pocicao1:focus-visible, 
+#pocicao12:focus-visible, 
+#pocicao13:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
