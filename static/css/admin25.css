@@ -816,7 +816,7 @@ input.jogo-checkbox {
 /* ========================================================= */
 /* 0. AÇÕES GERAIS E ELEMENTOS DE FORA DA TABELA */
 /* ========================================================= */
-.botoes-acoes2 {
+.botoes-acoes1 {
     /* Mantenha esta regra se o elemento deve ser fixo no topo da tela */
     position: fixed;
     margin-top: -6vw !important;
