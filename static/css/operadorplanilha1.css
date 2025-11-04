@@ -135,7 +135,8 @@ label {
 
 /* BOTÕES */
 .botoes-acoes,
-.botoes-acoes3 {
+.botoes-acoes3,
+.botoes-acoes1 {
   margin-bottom: 10px;  /* Reduzi o espaçamento inferior */
   display: flex;
   justify-content: flex-start;
